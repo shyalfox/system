@@ -1,7 +1,7 @@
 <?php
   include('connect.php');
   if(isset($_POST['loginsubmit'])){
-      $employee_id = $_POST['id_num'];
+      $employee_name = $_POST['name'];
       $passwords = $_POST['password'];
 
       if($employee_id==''){
@@ -12,7 +12,7 @@
           $msg = "password is required";
           header('Location:../employee_login?errmsg='.$msg);
       }
-     $query = "SELECT * FROM admin WHERE id = '$employee_id' AND password = '$passwords'";
+     $query = "SELECT * FROM admin WHERE username = '$employee_name' AND password = '$passwords'";
     $result = mysqli_query($conn,$query);
     
     $row = mysqli_num_rows($result);
