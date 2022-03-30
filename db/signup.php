@@ -32,7 +32,7 @@
     }
 
      $encryptedPassword = md5($password);
-     $query = "INSERT INTO customers(email,username,password,address,contact_no) VALUES('$email','$name','$encryptedPassword','$address','$contact_no')";
+     $query = "INSERT INTO customers(email,username,password,address,contact_no) VALUES('$email','$username','$encryptedPassword','$address','$contact_no')";
      if(mysqli_query($conn,$query)){
          $msg = "Signup successfully";
          header('Location:../login.php?msg='.$msg);

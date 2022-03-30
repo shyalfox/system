@@ -39,6 +39,7 @@
                     <?php while($row = mysqli_fetch_assoc($categoryResult)){?>
                     <tr>
                     <td><?php echo $row['id'];?></td>
+                    <td><?php echo$row['username'];?></td>
                       <td><?php echo $row['email'];?></td>
                       <td><?php echo $row['password'];?></td>
                       <td><?php echo $row['address'];?></td>

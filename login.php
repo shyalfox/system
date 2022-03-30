@@ -9,7 +9,7 @@
             <label>Password </label>
             <input type="text" name="password" placeholder="Enter Password"></input>
 
-            <input type="submit" value="Login"></input>
+            <input type="submit" value="login" name="login"></input>
         </form>
         <?php include('include/message.php');?>
 
