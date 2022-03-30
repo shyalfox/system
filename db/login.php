@@ -23,7 +23,7 @@
         $_SESSION['login']=1;
         $_SESSION['user_id']= $data['id'];
 
-        header('Location:../home.php');
+        header('Location:../index.php');
     }else{
         header('Location:../home.php?errmsg=email and password does not match');
     }
