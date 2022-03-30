@@ -11,6 +11,7 @@
 
             <input type="submit" value="Login"></input>
         </form>
+        <?php include('include/message.php');?>
 
             <h1>Not signed up yet</h1>
             <a href="signup.php"><button>Sign Up</button></a>
