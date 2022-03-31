@@ -184,27 +184,32 @@
           <p>Check Our Tasty Menu</p>
         </div>
 
+        <form method="post" action="db/index.php">
+
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-starters">Starters</li>
-              <li data-filter=".filter-salads">Salads</li>
-              <li data-filter=".filter-specialty">Specialty</li>
+              <li data-filter=".filter-breakfast">Breakfast</li>
+              <li data-filter=".filter-salads">Lunch</li>
+              <li data-filter=".filter-specialty">Bevreges</li>
             </ul>
           </div>
         </div>
 
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-6 menu-item filter-starters">
+          <div class="col-lg-6 menu-item filter-breakfast">
             <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Lobster Bisque</a><span>$5.95</span>
+              
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
+             
             </div>
+            
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
@@ -217,7 +222,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 menu-item filter-starters">
+          <div class="col-lg-6 menu-item filter-breakfast">
             <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Crab Cake</a><span>$7.95</span>
@@ -247,7 +252,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 menu-item filter-starters">
+          <div class="col-lg-6 menu-item filter-breakfast">
             <img src="assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Mozzarella Stick</a><span>$4.95</span>
@@ -286,7 +291,7 @@
               Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
             </div>
           </div>
-
+        </form>
         </div>
 
       </div>
