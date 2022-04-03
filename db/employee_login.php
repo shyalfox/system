@@ -22,7 +22,7 @@
         $_SESSION['login']=1;
         $_SESSION['user_id']= $data['id'];
 
-        header('Location:../customer_info.php');
+        header('Location:../employee_home.php');
     }else{
         header('Location:../employee_login.php?errmsg=idz and password does not match');
     }
