@@ -1,12 +1,9 @@
 <?php
   include('db/connect.php');
-  $query = "SELECT * FROM items";
+  $query = "SELECT * FROM items where id=2";
   $result = mysqli_query($conn, $query);
-
-  session_start();
-  $uid = $_SESSION['user_id'];
+  
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +82,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
-      <!-- changed here -->
-      <a href="#make-an-order" class="book-a-table-btn scrollto d-none d-lg-flex">Make an order</a>
+      <a href="#make-an-order" class="book-a-table-btn scrollto d-none d-lg-flex">Make an Order</a>
 
     </div>
   </header><!-- End Header -->
@@ -188,6 +184,11 @@
 
     <!-- ======= Menu Section ======= -->
     <section id="menu" class="menu section-bg">
+     <?php while($row=mysqli_fetch_assoc($result)) { 
+      echo $row['name'];
+      echo $row['price'];
+    }
+    ?> 
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -209,11 +210,25 @@
         </div>
 
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
+        
+    
+            <div class="col-lg-6 menu-item filter-specialty">
+                <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+                <div class="menu-content">
+                <a href="#">astk</a><span>$2.95</span>
+                
+                </div>
+                <div class="menu-ingredients">
+                Lorem, deren, trataro, filede, nerada
+                
+                </div>
+                
+            </div>
+            
           <div class="col-lg-6 menu-item filter-breakfast">
             <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
-              <a href="#">Lobster Bisque</a><span>$5.95</span>
+              <a href="#">bisk</a><span>$5.95</span>
               
             </div>
             <div class="menu-ingredients">
@@ -557,39 +572,57 @@
       </div>
     </section><!-- End Book A Table Section -->
 
-    <!-- changed here -->
-     <!-- ======= make an order Section ======= -->
+     <!-- ======= Make an order Section  ======= -->
      <section id="make-an-order" class="book-a-table">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Order</h2>
-          <p>Pick Something</p>
+          <p>Make an order</p>
         </div>
-     
-        <table class="table">
-             <thead>
-               <th style="color:white;">Items</th>
-               <th style="color:white;">Price</th>
-           </thead>
-           <tbody>
-                  <form action="forms/make-an-order.php" method="post">
-                    <?php while($row=mysqli_fetch_assoc($result)) { ?>        
-                  <tr>            
-                    <td style="color:white;"><?php echo $row['name'];?> <input type="checkbox" name="ordered-item[]" value ="<?php echo $row['id'];?>"></td>
-                    <td style="color:white;"><?php echo $row['price'];?></td>
-                  </tr>
-                  <?php } ?>
-                  <button type="submit" name ="submitz">ORDER</button>
-                </form>
-            </tbody>
-             
-             </table>
-            
-          
+
+        <form action="forms/make-an-order.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Book a Table</button></div>
+        </form>
 
       </div>
-    </section><!-- End make an order Section -->
+    </section>
+     <!-- ======= Make an order Section Ends ======= -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
