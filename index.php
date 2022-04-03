@@ -580,7 +580,7 @@
                     <td style="color:white;"><?php echo $row['price'];?></td>
                   </tr>
                   <?php } ?>
-                  <button type="submit" name ="submitz">ORDER</button>
+                  <button type="submit" name ="submit">ORDER</button>
                 </form>
             </tbody>
              
