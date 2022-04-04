@@ -580,9 +580,10 @@
                     <td style="color:white;"><?php echo $row['price'];?></td>
                   </tr>
                   <?php } ?>
-                  <button type="submit" name ="submit">ORDER</button>
-                </form>
+                   
             </tbody>
+             <button type="submit" name ="submit">Add To Cart</button>
+                 </form>
              
              </table>
             
