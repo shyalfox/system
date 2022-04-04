@@ -576,16 +576,16 @@
                   <form action="forms/make-an-order.php" method="post">
                     <?php while($row=mysqli_fetch_assoc($result)) { ?>        
                   <tr>            
-                    <td style="color:white;"><?php echo $row['name'];?> <input type="checkbox" name="ordered-item[]" value ="<?php echo $row['id'];?>"></td>
+                    <td style="color:white;"><?php echo $row['name'];?> <input type="checkbox" name="ordered-item[]" value ="<?php echo $row['name'];?>"></td>
                     <td style="color:white;"><?php echo $row['price'];?></td>
                   </tr>
                   <?php } ?>
-                   
-            </tbody>
-             <button type="submit" name ="submit">Add To Cart</button>
+                    </tbody>
+                  <button type="submit" name ="submit">Add To Cart</button>
                  </form>
+        </table>
+
              
-             </table>
             
           
 
