@@ -7,7 +7,7 @@
     <title>admin page</title>
 </head>
 <body>
-    <form action="db/item_insertion.php" method="post">
+    <form action="db/item_insertion.php" method="post" enctype="multipart/form-data">
         <label for="">Item Name</label>
         <input type="text" name="item_name">
         <label for="">Item Price</label>
