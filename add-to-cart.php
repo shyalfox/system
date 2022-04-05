@@ -19,15 +19,18 @@
     <table>
     <th>Item</th>
     <th>Quantity</th>
-    <form action="db/cart.add-to-cart.php" method="post">
+    <form action="db/add-to-cart.php" method="post">
     <?php while($row=mysqli_fetch_assoc($CartResult)) { ?>        
                   <tr>            
                     <td ><?php echo $row['item_name'];?></td>
                     <td><label for="">Quantity</label><input type="number" name ="quantity"></td>
+                    <input type="hidden" name="item_name" value=<?php echo $row['item_name'] ?>>
+                    <input type="hidden" name="order_time" value=<?php echo $row['time']; ?>>
                   </tr>
      <?php } ?>
      </table>
      <button type="submit">Order</button>
+     <?phpinclude('include/message.php');?>
      </form>
     
 
