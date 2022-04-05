@@ -11,10 +11,10 @@
   if(isset($_POST['submit'])){
       if(!empty($_POST['ordered-item'])){
       foreach($_POST['ordered-item'] as $checked){
-          $query = "INSERT INTO orders(customer_id,item_name, time) VALUES($uid, '$checked','$date' )";
+          $query = "INSERT INTO cart(customer_id,item, time) VALUES($uid, '$checked','$date' )";
           mysqli_query($conn, $query);
       }
-      header('Location:../add-to-cart.php');
+      header('Location:../make-an-order.php');
     }
   }
 ?>

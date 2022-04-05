@@ -569,14 +569,21 @@
      
         <table class="table">
              <thead>
+               <th></th>
                <th style="color:white;">Items</th>
                <th style="color:white;">Price</th>
            </thead>
            <tbody>
-                  <form action="forms/make-an-order.php" method="post">
+                  <form action="forms/add-to-cart.php" method="post">
                     <?php while($row=mysqli_fetch_assoc($result)) { ?>        
-                  <tr>            
-                    <td style="color:white;"><?php echo $row['name'];?> <input type="checkbox" name="ordered-item[]" value ="<?php echo $row['name'];?>"></td>
+                  <tr>
+                    <td>
+                      <div>
+                        <img style="height:50px; width:50px;" src="items-img/<?php echo $row['image'];?>" alt="">
+                      </div>            
+                    </td>
+                    <td style="color:white;"><?php echo $row['name'];?> 
+                        <input type="checkbox" name="ordered-item[]" value ="<?php echo $row['name'];?>"></td>
                     <td style="color:white;"><?php echo $row['price'];?></td>
                   </tr>
                   <?php } ?>
