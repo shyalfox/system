@@ -1,9 +1,11 @@
 <?php
+ session_start();
+ if(!isset($_SESSION['login']) || !$_SESSION['login']==1){
+   header('Location:login.php');
+}
   include('db/connect.php');
   $query = "SELECT * FROM items";
   $result = mysqli_query($conn, $query);
-
-  session_start();
   $uid = $_SESSION['user_id'];
   $userQuery = "SELECT * FROM customers WHERE id='$uid'";
   $userShow = mysqli_query($conn, $userQuery);
