@@ -21,7 +21,7 @@
     if(isset($_POST['submit'])){
         if(!empty($_POST['quantity'])){
             foreach($_POST['item_name'] as $index => $ordereditem){
-                $cquery = "INSERT INTO orders(customer_id,item_name, quantity, time) VALUES($uid, '$ordereditem','$quantity[$index]', '$time' )";
+                $cquery = "INSERT INTO orders(customer_id,item_name, quantity, time) VALUES($uid, '$ordereditem',$quantity[$index], '$time' )";
                 mysqli_query($conn, $cquery);
             }
             header('Location:../make-an-order.php');
