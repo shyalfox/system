@@ -6,6 +6,10 @@
        $password = $_POST['password'];
        $address=$_POST['address'];
        $contact_no=$_POST['contact_no'];
+       $pics= $_FILES['image'] ['name'];
+       $tempnames = $_FILES['image'] ['tmp_name'];
+       $targets = '../profile-img/'.$pics;
+       move_uploaded_file($tempnames,$targets);
 
      if($username==''){
          $msg = "Username is required";
@@ -32,7 +36,7 @@
     }
 
      $encryptedPassword = md5($password);
-     $query = "INSERT INTO customers(email,username,password,address,contact_no) VALUES('$email','$username','$encryptedPassword','$address','$contact_no')";
+     $query = "INSERT INTO customers(email,username,password,address,contact_no,profile_pic) VALUES('$email','$username','$encryptedPassword','$address','$contact_no','$pics')";
      if(mysqli_query($conn,$query)){
          $msg = "Signup successfully";
          header('Location:../login.php?msg='.$msg);

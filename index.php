@@ -5,6 +5,12 @@
 
   session_start();
   $uid = $_SESSION['user_id'];
+  $userQuery = "SELECT * FROM customers WHERE id='$uid'";
+  $userShow = mysqli_query($conn, $userQuery);
+  $userQuerys = "SELECT * FROM customers WHERE id='$uid'";
+  $userShows = mysqli_query($conn, $userQuerys);
+  $data = mysqli_fetch_assoc($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +77,7 @@
       <h1 class="logo me-auto me-lg-0"><a href="index.html">Asmt Cafeteria</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+     <!--navbar-->
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -80,13 +86,35 @@
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        
+        
+    
+
+         
+
+      <!--logged in User menu area-->
+        <ul>
+          <li class="dropdown"><span><a href="#">
+          <?php while ($row = mysqli_fetch_assoc($userShow)){?><?php echo "<img  height='20px width='20px src='profile-img/".$row['profile_pic']."' />";?>
+                <?php } ?>&nbsp;
+           <?php while ($row = mysqli_fetch_assoc($userShows)){?><?php echo $row['username'];?>
+                <?php } ?><i class="bi bi-chevron-down"></i></span></a>
+            <ul>
+              <li><a href="customer_info.php">My Account</a></li>
+              <li><a href="cart.php">My Cart</a></li>
+              <li><a href="order.php">My Orders</a></li>
+              <li>
+                <a><form method="post" action="db/logout.php">
+                  <input class="btn btn-outline-danger" type="submit" value="logout" name="logout"></input>
+               </form></a>
+              </li>
+            </ul>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
-      <!-- changed here -->
-      <a href="#make-an-order" class="book-a-table-btn scrollto d-none d-lg-flex">Make an order</a>
+      </nav>
+      
+
 
     </div>
   </header><!-- End Header -->
@@ -102,6 +130,7 @@
           <div class="btns">
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
             <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+            <a href="#make-an-order" class="btn-book animated fadeInUp scrollto">Make an Order</a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
