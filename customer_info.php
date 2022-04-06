@@ -1,14 +1,11 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['login']) || !$_SESSION['login']==1){
-     header('Location:login.php');
-  }
+  
   $id = $_SESSION['user_id']; 
   include('db/connect.php');
   $query = "SELECT * FROM customers WHERE id='$id'";
   $result = mysqli_query($conn,$query);
   $data = mysqli_fetch_assoc($result);
-  $categoryQuery = "SELECT * FROM customers";
+  $categoryQuery = "SELECT * FROM customers where id='$id'";
   $categoryResult = mysqli_query($conn, $categoryQuery);
 
 
@@ -22,7 +19,7 @@
 <div class="row justify-content-md-center">
             <?php
               if(mysqli_num_rows($categoryResult)==0){
-                echo "<h3>No goals yet</h3>";
+                echo "hello"
               }
               else{
                 ?>
