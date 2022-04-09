@@ -1,3 +1,11 @@
+<?php 
+ session_start();
+if(isset($_SESSION['login'])){
+  header('Location:index.php');
+}
+
+?>
+
 <html>
     <head>
     <link rel="stylesheet" href="assets/css/login.css">

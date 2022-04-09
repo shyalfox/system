@@ -28,3 +28,8 @@
 #chad-button {
  text-align: center;
 }
+
+#profile_text {
+  position: absolute;
+  left:-50px; 
+}
