@@ -1,6 +1,7 @@
 <?php
  session_start();
- if(!isset($_SESSION['login']) || !$_SESSION['login']==1){
+ 
+ if(!isset($_SESSION['login'])) {
    header('Location:login.php');
 }
   include('db/connect.php');
@@ -12,6 +13,7 @@
   $userQuerys = "SELECT * FROM customers WHERE id='$uid'";
   $userShows = mysqli_query($conn, $userQuerys);
   $data = mysqli_fetch_assoc($result);
+  $good=1;
 
 ?>
 
@@ -76,7 +78,7 @@
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index.html">Asmt Cafeteria</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.php">Asmt Cafeteria</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
      <!--navbar-->
@@ -97,8 +99,9 @@
       <!--logged in User menu area-->
         <ul>
           <li class="dropdown"><span><a href="#">
-          <?php while ($row = mysqli_fetch_assoc($userShow)){?><?php echo "<img  height='20px width='20px src='profile-img/".$row['profile_pic']."' />";?>
-                <?php } ?>&nbsp;
+          <?php while ($row = mysqli_fetch_assoc($userShow)) {?>
+        <img style=" border:2px #d4811c solid; border-radius:50%; height:30px; width:30px  " src="profile-img/<?php echo $row['profile_pic'];?>" alt="">
+        <?php } ?>&nbsp;
            <?php while ($row = mysqli_fetch_assoc($userShows)){?><?php echo $row['username'];?>
                 <?php } ?><i class="bi bi-chevron-down"></i></span></a>
             <ul>
