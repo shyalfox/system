@@ -122,8 +122,8 @@
                 $sql2 = "UPDATE orders SET 
                     quantity = $qty,
                     status = '$status',
-                    time = '$time',
-                    WHERE id=$id
+                    time = '$time'
+                    WHERE id= $id
                 ";
 
                 //Execute the Query
