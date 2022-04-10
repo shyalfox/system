@@ -123,8 +123,8 @@
                     quantity = $qty,
                     status = '$status',
                     time = '$time'
-                    WHERE id= $id
-                ";
+
+                    WHERE id=$id ";
 
                 //Execute the Query
                 $res2 = mysqli_query($conn, $sql2);
