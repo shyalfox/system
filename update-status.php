@@ -122,7 +122,7 @@
                 $sql2 = "UPDATE orders SET 
                     quantity = $qty,
                     status = '$status',
-                    time = '$time',
+                    time = '$time'
                     WHERE id=$id
                 ";
 

@@ -371,7 +371,8 @@
           <p>Pick Something</p>
         </div>
       
-                    Status
+                    <h2>Select Food item & Its price</h2>
+                    <h4>!Please select correct price for the item</h4>
                    <form action="forms/add-to-cart.php" method = "POST">
                    <select name="item-name">
                           <?php while($row= mysqli_fetch_assoc($result)){ ?>
@@ -391,9 +392,9 @@
                                 </option>
                                  
                         <?php  }?>
-                        </select>
+                        </select></br></br>
                         
-                        <label>input quantity here</label></br>
+                        <h3>Insert quantity here</h3></br>
                                   <input type="number" name="quantity"></br></br>
                         <input class="btn btn-outline-danger" type="submit" name ="submit" value="Add to Cart"></input>
                         </form>
