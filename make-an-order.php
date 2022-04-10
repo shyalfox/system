@@ -1,5 +1,8 @@
 <?php
     session_start();
+    // if(!isset($_POST['submit'])){
+    //     header("location:../index.php");
+    // }
     $uid = $_SESSION['user_id'];
     include('db/connect.php');
     $Cdate = date('Y-m-d h:i:s');
@@ -26,7 +29,7 @@
                     <td ><?php echo $row['item'];?></td>
                     <td><label for="">Quantity</label><input type="number" name ="quantity"></td>
                     <input type="hidden" name="item_name" value=<?php echo $row['item'] ?>>
-                    <input type="hidden" name="order_time" value=<?php echo $row['time']; ?>>
+                    <input type="hidden" name="order_time" value="<?php echo $Cdate;?>">
                     <td><button type="submit" name="submit">Order</button></td>
             </tr>
     </form>
