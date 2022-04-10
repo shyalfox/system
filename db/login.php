@@ -25,7 +25,7 @@
 
         header('Location:../index.php');
     }else{
-        header('Location:../home.php?errmsg=email and password does not match');
+        header('Location:../login.php?errmsg=email and password does not match');
     }
 
   }

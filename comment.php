@@ -132,3 +132,49 @@
 
  
                 </table>
+
+
+
+                <!-- index table -->
+
+                
+        <table class="table">
+             <thead>
+             <th style="color:white;">Food</th>
+               <th style="color:white;">Items</th>
+                <th></th>
+               <th style="color:white;"></th>
+               <th></th>
+               <th style="color:white;">Price</th>
+             
+           </thead>
+           <tbody>
+                  <form action="forms/add-to-cart.php" method="post">
+                    <?php while($row=mysqli_fetch_assoc($result)) { ?>        
+                      
+                  <tr>
+                    <td>
+                      <div>
+                        <img style="height:50px; width:50px; border-radius:50%;" src="items-img/<?php echo $row['image'];?>" alt="">
+                      </div>            
+                    </td>
+                    <td style="color:white;"><?php echo $row['name'];?> 
+                        <input type="checkbox" name="item-name[]"  value="<?php echo $row['name'];?>">
+                        <td>
+                        <td style="color:white;"> 
+                       
+                        <td>
+                    <td style="color:white;"><?php echo $row['price'];?>
+                    <input type="radio" name="item-price"  value="<?php echo $row['price'];?>" ></td>
+                    
+                  </tr>
+                  <?php } ?>
+                  
+                  <label>Please select one item and one price per add to cart</label>
+                    </tbody>
+                    
+                
+                
+                 
+                 
+        </table>

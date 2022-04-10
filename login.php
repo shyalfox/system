@@ -36,8 +36,9 @@ if(isset($_SESSION['login'])){
                   </div>
                   <div class="d-flex align-items-center justify-content-center pb-4">
                   <input type="submit" value="Login" name="login" class="btn btn-outline-danger">
-                   
+        
                   </div>
+                  <?php include('include/message.php');?>
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2" href="signup.php">Don't have an account?&nbsp;&nbsp;&nbsp;</p>
                    <a href="signup.php"> <button type="button"  class="btn btn-outline-danger">Create new</button></a>
@@ -53,7 +54,7 @@ if(isset($_SESSION['login'])){
 
       
         </form>
-        <?php include('include/message.php');?>
+        
         </div>
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
