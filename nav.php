@@ -57,7 +57,7 @@
                 <?php } ?><i class="bi bi-chevron-down"></i></span></a>
             <ul>
               <li><a href="customer_info.php">My Account</a></li>
-              <li><a href="cart.php">My Cart</a></li>
+              <li><a href="make-an-order.php">My Cart</a></li>
               <li><a href="order.php">My Orders</a></li>
               <li>
                 <a><form method="post" action="db/logout.php">
