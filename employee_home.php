@@ -23,6 +23,7 @@
     <h2>Orders</h2>
     <table>
               <thead>
+                <th>Order ID</th>
                 <th>customer id</th>
                 <th>customer</th>
                 <th>email</th>
@@ -51,7 +52,7 @@
                 $iResult = mysqli_query($conn, $iQuery);
                 $iRow = mysqli_fetch_assoc($iResult);
             ?>
-                    
+                     <td><?php echo $row['id'];?></td>
                      <td><?php echo $row['customer_id'];?></td>
                      <td><?php echo $cRow['username'];?></td>
                      <td><?php echo $cRow['email'];?></td>

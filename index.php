@@ -371,8 +371,9 @@
           <p>Pick Something</p>
         </div>
       
-                    <h2>Select Food item & Its price</h2>
+                    <h2>Select Food item & Its price</h2></br></br>
                     <h4>!Please select correct price for the item</h4>
+           </br></br>
                    <form action="forms/add-to-cart.php" method = "POST">
                    <select name="item-name">
                           <?php while($row= mysqli_fetch_assoc($result)){ ?>
@@ -397,6 +398,9 @@
                         <h3>Insert quantity here</h3></br>
                                   <input type="number" name="quantity"></br></br>
                         <input class="btn btn-outline-danger" type="submit" name ="submit" value="Add to Cart"></input>
+                          </br></br></br>
+
+                        <h4>Note: We accept one item per order so multiple items require multiple orders.</h4>
                         </form>
 
 

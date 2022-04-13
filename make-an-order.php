@@ -175,7 +175,12 @@
                                         
                                 </div>
                                 <input style="fomt-size:200px" name="submit" type="submit" value="Make an Order" class="btn btn-block btn-outline-primary btn-lg"></input>
-                                                               </from>
+                                </form></br></br>
+                            <form action="db/delete.php" method="Post">
+                            <input style="fomt-size:200px" name="delete" type="submit" value="Empty The Cart" class="btn  btn-outline-primary btn-block btn-lg "></input>
+
+                                                               </form></br></br></br>
+                            <h4 style="color:black;text-align:center;">Note: Empty the previous cart items before making new orders</h4>
                             </div>
                         </div>
                     </div>

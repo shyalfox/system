@@ -17,8 +17,14 @@
             
             $cquery = "INSERT INTO orders(customer_id,item_name, quantity, time,price,total,status) VALUES ($aid, '$ordereditem',$quantity, '$time','$item_price','$item_total','$item_status' )";
             mysqli_query($conn, $cquery);
+            $dquery = "DELETE FROM cart WHERE customer_id='$aid'";
+            mysqli_query($conn, $dquery);
+            header('Location:../make-an-order.php');
 }
-header('Location:../make-an-order.php');
+
+
+
+
 
 ?>
 
